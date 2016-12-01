@@ -1,0 +1,54 @@
+<div class="jumbotron">
+		<table class="table table-striped">
+		<tr>
+			<th><a>Ano</a></th>
+			<th><a>Modelo</a></th>
+			<th>Obs</th>
+			<th>Valor</th>
+			<th>Marca</th>
+			<th>Categoria</th>
+			<th>Ação</th>
+		</tr>
+		<tr>
+			<td><input class="form-control" ng-model="obj.ano" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.modelo" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.observacao" type="text" /></td>
+			<td>
+				<input class="form-control" ng-model="obj.preco" type="text" />
+			</td>
+			<td><input class="form-control" ng-model="obj.marca" type="text" /></td>
+			<td>
+				<select ng-model="obj.categoria.id">
+					<option value="{{item.id}}" ng-repeat="item in categorias">{{item.descricao}}</option>
+				</select>
+			</td>
+			<td>
+				<button class="btn btn-success" ng-click="save(obj)">Add</button>
+			</td>
+		</tr>
+	</table>
+	<table ng-show="veiculos.length > 0" class="table table-striped">
+		<tr>
+			<th>Ano</th>
+			<th>Modelo</th>
+			<th>Obs</th>
+			<th>Valor</th>
+			<th>Marca</th>
+			<th>Categoria</th>
+			<th>Ação</th>
+		</tr>
+		<tr ng-repeat="item in veiculos">
+			<td>{{item.ano}}</td>
+			<td>{{item.modelo}}</td>
+			<td>{{item.observacao}}</td>
+			<td>{{item.categoria.preco}}</td>
+			<td>{{item.marca}}</td>
+			<td>{{item.categoria.descricao}}</td>
+			<td>
+				<button class="btn btn-danger" ng-click="deleteFuncionario(item.id)">Del</button>
+				<button class="btn btn-info" ng-click="up(item)">Up</button>
+			</td>
+		</tr>
+	</table>
+	<hr/>
+</div>

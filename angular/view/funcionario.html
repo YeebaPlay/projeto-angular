@@ -1,0 +1,43 @@
+<div class="jumbotron">
+		<table class="table table-striped">
+		<tr>
+			<th><a>Nome</a></th>
+			<th><a>Endereço</a></th>
+			<th>Telefone</th>
+			<th>Matricula</th>
+			<th>Ação</th>
+		</tr>
+		<tr>
+			<td><input class="form-control" ng-model="obj.nome" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.endereco" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.telefone" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.matricula" type="text" /></td>
+			<td>
+				<button class="btn btn-success" ng-click="saveFuncionario(obj)">Add</button>
+			</td>
+		</tr>
+	</table>
+	<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
+	<table ng-show="funcionarios.length > 0" class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th><a>Nome</a></th>
+			<th><a>Endereço</a></th>
+			<th>Telefone</th>
+			<th>Matricula</th>
+			<th>Ação</th>
+		</tr>
+		<tr ng-repeat="funcionario in funcionarios">
+			<td>{{funcionario.id}}</td>
+			<td>{{funcionario.nome}}</td>
+			<td>{{funcionario.endereco}}</td>
+			<td>{{funcionario.telefone}}</td>
+			<td>{{funcionario.matricula}}</td>
+			<td>
+				<button class="btn btn-danger" ng-click="deleteFuncionario(funcionario.id)">Del</button>
+				<button class="btn btn-info" ng-click="up(funcionario)">Up</button>
+			</td>
+		</tr>
+	</table>
+	<hr/>
+</div>

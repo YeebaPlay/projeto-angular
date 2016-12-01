@@ -1,0 +1,41 @@
+<html ng-app="veiculo">
+<head>
+	<meta charset="UTF-8">
+	<title>Trabalho do Malopes</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="css/ui.css">
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-route.js"></script>
+	<script src="js/app.js"></script>
+
+	<script src="js/controllers/VeiculoCtrl.js"></script>
+	<script src="js/services/VeiculoService.js"></script>
+
+	<script src="js/controllers/FuncionarioCtrl.js"></script>
+	<script src="js/services/FuncionarioService.js"></script>
+
+	<script src="js/controllers/AvariaCtrl.js"></script>
+	<script src="js/services/AvariaService.js"></script>
+
+	<script src="js/controllers/CategoriaCtrl.js"></script>
+	<script src="js/services/CategoriaService.js"></script>
+
+	<script src="js/controllers/ClienteCtrl.js"></script>
+	<script src="js/services/ClienteService.js"></script>
+
+	<script src="js/controllers/LocacaoCtrl.js"></script>
+	<script src="js/services/LocacaoService.js"></script>
+
+	<script src="js/controllers/MultaCtrl.js"></script>
+	<script src="js/services/MultaService.js"></script>
+
+	<script src="js/services/VeiculoService.js"></script>
+	<script src="js/config/routeConfig.js"></script>
+	<script src="js/value/configValue.js"></script>
+</head>
+<body>
+	<div ng-view></div>
+	<div ng-include="'view/footer.html'"></div>
+</body>
+</html>

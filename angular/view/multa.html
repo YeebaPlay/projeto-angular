@@ -1,0 +1,28 @@
+<div class="jumbotron">
+		<table class="table table-striped">
+		<tr>
+			<th>Descrição</th>
+			<th width="10%">Ação</th>
+		</tr>
+		<tr>
+			<td><input class="form-control" ng-model="obj.descricao" type="text" /></td>
+			<td>
+				<button class="btn btn-success" ng-click="saveMulta(obj)">Add</button>
+			</td>
+		</tr>
+	</table>
+	<table ng-show="multas.length > 0" class="table table-striped">
+		<tr>
+			<th>Descrição</th>
+			<th width="20%">Ação</th>
+		</tr>
+		<tr ng-repeat="item in multas">
+			<td>{{item.descricao}}</td>
+			<td>
+				<button class="btn btn-danger" ng-click="deleteMulta(item.id)">Del</button>
+				<button class="btn btn-info" ng-click="up(item)">Up</button>
+			</td>
+		</tr>
+	</table>
+	<hr/>
+</div>

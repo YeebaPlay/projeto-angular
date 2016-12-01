@@ -1,0 +1,43 @@
+<div class="jumbotron">
+		<table class="table table-striped">
+		<tr>
+			<th><a>Nome</a></th>
+			<th><a>Endereço</a></th>
+			<th>Telefone</th>
+			<th>CPF</th>
+			<th>Ação</th>
+		</tr>
+		<tr>
+			<td><input class="form-control" ng-model="obj.nome" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.endereco" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.telefone" type="text" /></td>
+			<td><input class="form-control" ng-model="obj.cpf" type="text" /></td>
+			<td>
+				<button class="btn btn-success" ng-click="saveCliente(obj)">Add</button>
+			</td>
+		</tr>
+	</table>
+	
+	<table ng-show="clientes.length > 0" class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th><a>Nome</a></th>
+			<th><a>Endereço</a></th>
+			<th>Telefone</th>
+			<th>CPF</th>
+			<th>Ação</th>
+		</tr>
+		<tr ng-repeat="item in clientes">
+			<td>{{item.id}}</td>
+			<td>{{item.nome}}</td>
+			<td>{{item.endereco}}</td>
+			<td>{{item.telefone}}</td>
+			<td>{{item.cpf}}</td>
+			<td>
+				<button class="btn btn-danger" ng-click="deleteCliente(item.id)">Del</button>
+				<button class="btn btn-info" ng-click="up(item)">Up</button>
+			</td>
+		</tr>
+	</table>
+	<hr/>
+</div>
